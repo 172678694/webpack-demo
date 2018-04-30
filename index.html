@@ -3,37 +3,46 @@
     <head>
         <title>杨琪匀的个人简历</title>
         <link rel="stylesheet" href="./a.css">
-        <style>
-       
+        <style type="text/css">
+        .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
         </style>
+        <script src="//at.alicdn.com/t/font_648630_kx5u0k8pos4kuik9.js"></script>
     </head>
     <body>
-        <div class="topNavBar clearfix" >
-            
-            <a class="logo" href="#" alt="logo" style="float: left; text-decoration:none;">
-                <span class="rs">RS</span><span class="card">card</span>
-            </a>
-            <nav style="float: right;">
-                <ul class="clearfix"  >
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
-                </ul>
-            </nav>   
+        <div class="topNavBar " >
+            <div class="topNavBar-inner clearfix" >
+                <a class="logo" href="#" alt="logo" style="float: left; text-decoration:none;">
+                    <span class="rs">RS</span><span class="card">card</span>
+                </a>
+                <nav style="float: right;">
+                    <ul class="clearfix"  >
+                        <li><a href="#">关于</a></li>
+                        <li><a href="#">技能</a></li>
+                        <li><a href="#">作品</a></li>
+                        <li><a href="#">博客</a></li>
+                        <li><a href="#">日历</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">其他</a></li>
+                    </ul>
+                </nav>   
+            </div>
         </div>
-        <div class="banner" style="background-image:url(#)"></div>
+        <div class="banner" >
+            <div class="mask"></div>
+        </div>
         <main>
-            <div class="card">
-                <div class="pictureAndText">
-                    <div class="picture">
-                        <img src="#" alt="头像">
+            <div class="userCard" >
+                <div class="pictureAndText clearfix" >
+                    <div class="picture" style="float:left;" >
+                        <img src="./img/avatar.jpg" height=296 weight=343 alt="头像">
                     </div>
-                    <div class="text">
-                        <span class="welcome">Hello</span>
+                    <div class="text" style=" float:left; ">
+                        <span class="welcome">Hello<span class="triangle"></span></span>
                         <h1>杨琪匀</h1>
                         <p>前端工程师</p>
                         <hr>
@@ -50,13 +59,32 @@
                     </div>
                 </div>
                 <footer class="media">
-                    <a href="#"><img src="#" alt=".."></a>
-                    <a href="#"><img src="#" alt=".."></a>
-                    <a href="#"><img src="#" alt=".."></a>
-                    <a href="#"><img src="#" alt=".."></a>
-                    <a href="#"><img src="#" alt=".."></a>
-                    <a href="#"><img src="#" alt=".."></a>                          
-                </footer>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true" >
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true" >
+                            <use xlink:href="#icon-icon-mail"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true" >
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true" >
+                            <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true" >
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>                               
+                </footer>   
             </div>
             <a class="button" href="#">下载我的简历</a>
             <p>我的简介</p>
