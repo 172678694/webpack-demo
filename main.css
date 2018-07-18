@@ -32,7 +32,7 @@ h1,h2,h3,h4,h5,h6{font-weight: normal;}
 .userCard >footer.media{background-color: #E6686A;text-align: center;}
 .userCard >footer.media>a{border-radius: 50%;width: 40px;   height: 30px;   padding: 5px 0;   display: inline-block;   margin: 16px; }
 .userCard >footer.media>a:hover{background-color: #cf505f;}
-.userCard svg{     width: 30px;    height: 30px;     fill: white;     vertical-align: top;   }
+.userCard svg{ width: 30px;   height: 30px;  fill: white;  vertical-align: top; }
 body>main{margin-top: -340px;}
 body>main .downloadResume-wrapper{   text-align: center;}
 body>main .downloadResume{border: 1px solid rgb(203, 205, 207);;font-size: 14px; padding: 21px 55px; display: inline-block;  /*如果不写，上下padding不起作用*/border-radius: 2px;  /*长方形的圆角*/ color:#3d4451; font-weight: bold; margin: 30px ; transition: box-shadow 0.3s;  /*过渡效果，使得变化不那些突兀*/}
@@ -59,3 +59,4 @@ section.portfolio>nav .bar.state-2 .bar-inner{  margin-left: 72px; width: 15%;}
 section.portfolio>nav .bar.state-3 .bar-inner{  margin-left: 143px;  width: 40%;}
 section.portfolio .works{  height: 576px;  position: relative;}
 section.portfolio .works .big,section.portfolio .works .small{  position: absolute;}
+
