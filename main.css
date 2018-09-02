@@ -6,13 +6,43 @@ hr{height: 0;border: none; border-top: 1px solid #DEDEDE;}
 ul,ol{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-weight: normal;}
 .clearfix::after{content: "";display: block;clear: both;}
-.topNavBar nav ul{list-style: none;margin: 0; padding: 0;}/* 按照‘爸爸>儿子’的样式 */
-.topNavBar nav ul li{float: left;margin-left: 17px;margin-right: 17px;}
-.topNavBar {position: fixed;top: 0;left:0;width: 100%;padding: 20px 0 20px 0;}
-.topNavBar-inner{padding: 0 16px;}
+.topNavBar nav>ul{list-style: none;margin: 0; padding: 0;}
+.topNavBar nav>ul>li{float: left;margin-left: 17px;margin-right: 17px;position: relative;}
+.topNavBar {position: fixed;top: 0;left:0;width: 100%;padding: 20px 0px 20px 0px;transition: all 0.5s;color: rgba(255, 255, 255, 0.7);}
+.topNavBar.sticky{background-color: white; padding: 10px 0;z-index: 1;box-shadow: 0 0 20px rgba(0,0,0,0.25);color: #3d4451; }
+.topNavBar-inner{margin: 0 16px;} 
 .topNavBar nav{padding-top: 7px;padding-bottom: 1px;}
-.topNavBar nav ul li a{font-size: 12px;color: #C0C2C5; text-decoration: none;font-weight: bold;border-top:3px solid transparent;border-bottom:3px solid transparent;padding-top: 5px;padding-bottom: 5px;display: block; }
-.topNavBar nav ul li a:hover{border-top:3px solid transparent;border-bottom:3px solid #E8676B;}
+.topNavBar nav>ul>li>a{font-size: 12px;color: inherit; text-decoration: none;font-weight: bold;border-top:3px solid transparent;
+                border-bottom:3px solid transparent;padding-top: 5px;padding-bottom: 5px;display: block; position: relative;}
+.topNavBar nav>ul>li.active >a::after{content:''; display:block; position:absolute; top:100%; left:0; width:100%; background:#e06567; height:3px;animation:menuSlide 0.3s;}
+@keyframes menuSlide{
+	0%{width:0;} 
+	100%{width:100%;}
+}
+.topNavBar li>.submenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    padding:5px 10px;
+    color: #3d4451;
+    animation:submenuSlide 0.3s;
+}
+.topNavBar li.active>.submenu{
+    display: block;
+}
+@keyframes submenuSlide{
+    0%{
+    margin-right: -100%; /*li的百分百*/
+    }
+    100%{
+    margin-right: 0;
+    }
+}
+.topNavBar .submenu>li{
+    white-space: nowrap;
+}
 .topNavBar .logo {font-size: 24px;font-family: 'Arial Black';padding-top: 3px;padding-bottom: 4px;}
 .topNavBar .logo .rs{margin-right: 4px;color: #E8676B;}
 .topNavBar .logo .card{color: #9A9DA2;}
@@ -59,4 +89,3 @@ section.portfolio>nav .bar.state-2 .bar-inner{  margin-left: 72px; width: 15%;}
 section.portfolio>nav .bar.state-3 .bar-inner{  margin-left: 143px;  width: 40%;}
 section.portfolio .works{  height: 576px;  position: relative;}
 section.portfolio .works .big,section.portfolio .works .small{  position: absolute;}
-
