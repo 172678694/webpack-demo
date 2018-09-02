@@ -37,10 +37,10 @@
                 </a>
                 <nav class="menu" style="float: right;">
                     <ul class="clearfix"  >
-                        <li><a href="#">关于</a></li>
-                        <li><a href="#">技能</a></li>
+                        <li><a href="#siteAbout">关于</a></li>
+                        <li><a href="#siteSkill">技能</a></li>
                         <li>
-                            <a  href="#">作品</a>
+                            <a  href="#siteWork">作品</a>
                             <ul class="submenu">
                                 <li>作品1</li>
                                 <li>作品2</li>
@@ -66,7 +66,7 @@
             <div class="mask"></div>
         </div>
         <main style="margin-top:-340px;">
-            <div class="userCard" >
+            <div id='siteAbout'  class="userCard" >
                 <div class="pictureAndText clearfix" >
                     <div class="picture" style="float:left;" >
                         <img src="./img/avatar.jpg" height=296 weight=343 alt="头像">
@@ -123,7 +123,7 @@
             <p class="selfIntroduction">杨琪匀，前端开发工程师,现在就职于腾讯；<br>技能：前端开发，node.js开发
             </p>
         </main>
-        <section class="skill">
+        <section id='siteSkill' class="skill">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -176,7 +176,7 @@
                 </li>
             </ol>
         </section>
-        <section class="portfolio">
+        <section id="siteWork" class="portfolio">
             <h2>作品集</h2>
             <nav>
                     <ol class="clearfix" >
@@ -232,6 +232,24 @@
                 liTags[i].onmouseleave=function(x){
                 let li=x.currentTarget.classList.remove('active')
                 }
+            }
+            let aTags=document.querySelectorAll('nav.menu>ul>li>a')
+            for (let i = 0; i < aTags.length; i++) {
+                aTags[i].onclick=function(x){
+                  x.preventDefault()
+                  let a =x.currentTarget
+                  let href=a.getAttribute('href')        //"#siteAbout"字符串
+                  let element=document.querySelector(href) 
+                  // debugger
+                  let top=element.offsetTop
+                  window.scrollTo(0,top-80)
+                 
+                  //<div id="siteAbout">
+
+                }
+                
+
+      
             }
         </script>
     </body>
