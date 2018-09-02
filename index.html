@@ -120,7 +120,7 @@
                 <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载我的简历</a>
             </p>
             
-            <p class="selfIntroduction">杨琪匀，前端开发工程师,现在就职于腾讯；<br>技能：前端开发，node.js开发
+            <p class="selfIntroduction">杨琪匀，前端开发工程师,目标就职于腾讯；<br>技能：前端开发，node.js开发
             </p>
         </main>
         <section id='siteSkill' class="skill">
@@ -211,6 +211,7 @@
                     </div>   
             </div>
         </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
         <script>
             setTimeout(function(){
                 siteWelcome.classList.remove('active')
@@ -233,23 +234,36 @@
                 let li=x.currentTarget.classList.remove('active')
                 }
             }
+            // Setup the animation loop.
+            function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+            }
+            requestAnimationFrame(animate);
+
             let aTags=document.querySelectorAll('nav.menu>ul>li>a')
             for (let i = 0; i < aTags.length; i++) {
                 aTags[i].onclick=function(x){
-                  x.preventDefault()
-                  let a =x.currentTarget
-                  let href=a.getAttribute('href')        //"#siteAbout"字符串
-                  let element=document.querySelector(href) 
-                  // debugger
-                  let top=element.offsetTop
-                  window.scrollTo(0,top-80)
-                 
-                  //<div id="siteAbout">
+                x.preventDefault()
+                let a =x.currentTarget
+                let href=a.getAttribute('href')          //"#siteAbout"字符串
+                let element=document.querySelector(href)   // debugger
+                let top=element.offsetTop
 
-                }
+                let currentTop=window.scrollY
+                let targetTop=top-80
+                let s=targetTop-currentTop
                 
 
-      
+                var coords = { y: currentTop }
+                var t=Math.abs((s/100)*300)
+                if (t>500) {t=500}
+                var tween = new TWEEN.Tween(coords) 
+                .to({ y: targetTop}, t) 
+                .easing(TWEEN.Easing.Quadratic.Out) 
+                .onUpdate(function() { window.scrollTo(0,coords.y)})
+                .start();
+                }   
             }
         </script>
     </body>
