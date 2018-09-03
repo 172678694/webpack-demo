@@ -66,7 +66,7 @@
             <div class="mask"></div>
         </div>
         <main style="margin-top:-340px;">
-            <div id='siteAbout'  class="userCard" >
+            <div data-x id='siteAbout'  class="userCard" >
                 <div class="pictureAndText clearfix" >
                     <div class="picture" style="float:left;" >
                         <img src="./img/avatar.jpg" height=296 weight=343 alt="头像">
@@ -123,7 +123,7 @@
             <p class="selfIntroduction">杨琪匀，前端开发工程师,目标就职于腾讯；<br>技能：前端开发，node.js开发
             </p>
         </main>
-        <section id='siteSkill' class="skill">
+        <section data-x id='siteSkill' class="skill">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -176,7 +176,7 @@
                 </li>
             </ol>
         </section>
-        <section id="siteWork" class="portfolio">
+        <section data-x id="siteWork" class="portfolio">
             <h2>作品集</h2>
             <nav>
                     <ol class="clearfix" >
@@ -246,7 +246,7 @@
                 aTags[i].onclick=function(x){
                 x.preventDefault()
                 let a =x.currentTarget
-                let href=a.getAttribute('href')          //"#siteAbout"字符串
+                let href=a.getAttribute('href')     //"#siteAbout"字符串
                 let element=document.querySelector(href)   // debugger
                 let top=element.offsetTop
 
@@ -254,7 +254,7 @@
                 let targetTop=top-80
                 let s=targetTop-currentTop
                 
-
+                //缓动
                 var coords = { y: currentTop }
                 var t=Math.abs((s/100)*300)
                 if (t>500) {t=500}
@@ -264,6 +264,18 @@
                 .onUpdate(function() { window.scrollTo(0,coords.y)})
                 .start();
                 }   
+
+                let specialTags=document.querySelectorAll('[data-x]')
+                let minIndex=0
+                if (let i=1;i<specialTags.length;i++) {
+                   if( Math.abs(specialTags[i].offsetTop-window.scrollY) <Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
+                    minIndex=i
+                   }
+                }
+                if (let i=0;i<specialTags.length;i++) {
+                    specialTags[i].classList.remove('active')
+                }
+                specialTags[minIndex].classList.add('active')
             }
         </script>
     </body>
