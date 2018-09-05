@@ -267,16 +267,28 @@
 
                 let specialTags=document.querySelectorAll('[data-x]')
                 let minIndex=0
-                if (let i=1;i<specialTags.length;i++) {
-                   if( Math.abs(specialTags[i].offsetTop-window.scrollY) <Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
+                for (let i =1;i<specialTags.length;i++){
+                   if( Math.abs(specialTags[i].offsetTop-window.scrollY) < Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
                     minIndex=i
                    }
                 }
-                if (let i=0;i<specialTags.length;i++) {
+                for (let i=0;i<specialTags.length;i++) {
                     specialTags[i].classList.remove('active')
                 }
                 specialTags[minIndex].classList.add('active')
+
+                let id=specialTags[minIndex].id
+                let a =document.querySelector('a[href="#'+ id +'"]')
+                let li=a.parentNode
+                console.log(li)
+                let brothersAndMe=li.parentNode.children
+                for (let i = 0; i <brothersAndMe.length; i++) {
+                    brothersAndMe[i].classList.remove('active')
+                }
+                li.classList.add('active')
             }
+
+
         </script>
     </body>
 </html>
