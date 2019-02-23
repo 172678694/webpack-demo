@@ -134,7 +134,7 @@ body>main .downloadResume:hover{
 .selfIntroduction{max-width: 940px;margin-left: auto;margin-right: auto;text-align:center;line-height: 1.8;}
 body>section.skills,
 body>section.portfolio{max-width: 940px;margin-left: auto; margin-right: auto;}
-body>section.skills >h2,body>section.portfolio >h2{
+body>section.skills >h2,body>section.portfolio >h2,body>section.message >h2{
     color: #3d4451; font-size: 34px;line-height: 1.2;font-weight: 600;
     text-align: center;   
     margin-top: 60px;  margin-bottom: 30px;
@@ -156,3 +156,12 @@ section.portfolio{ text-align: center; margin-bottom: 100px; max-width:720px;}
 section.portfolio .swiper-container {width: 668px;height: 501px;}
 section.portfolio .swiper-button-prev{background-color: white;height: 64px;width: 64px;border-radius: 50%;left:auto ;right: 90%;}
 section.portfolio .swiper-button-next{background-color: white;height: 64px;width: 64px;border-radius: 50%;left:90% ;right: auto;}
+section.message >ol{
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
+}
+section.message >ol>li{
+    border-bottom: 1px solid #DDD;
+    padding: 16px;
+}
