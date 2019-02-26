@@ -2,20 +2,16 @@
     var model=Model('Message')
     var view = View('section.message')
 
-    var controller = {
-        view: null,
-        messageList: null,
+    var controller = Controller({
+        messageList:null,
+        form:null,
         init: function (view,model) {
-            this.view = view
-            this.model = model
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('#form')
-            this.model.init()
-            this.loadMessage()
-            this.bindEvents()
+            this.loadMessage() //this===object
         },
-
-        loadMessage: function () { 
+        loadMessage: function () {
+            console.log(this)
             this.model.fetch().then(
                 (messages) => {
                     let array = messages.map((item) => item.attributes)
@@ -49,7 +45,8 @@
                 myForm.querySelector('input[name=content]').value = ''
                 myForm.querySelector('input[name=name]').value = ''
             })
-        },
-    }
-    controller.init(view,model)
+        }
+    })
+    controller.init(view,model) //controller === object
 }.call()
+    
