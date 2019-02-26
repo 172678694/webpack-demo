@@ -1,6 +1,6 @@
 !function () {
     //点击导航栏后缓缓滑动到到相应区域
-    var view= document.querySelector('nav.menu')
+    var view= View('nav.menu')
     var controller = {
         view:null,
         aTags:null,
